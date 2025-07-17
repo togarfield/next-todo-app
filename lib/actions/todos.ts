@@ -34,7 +34,7 @@ export async function createTodo(formData: FormData) {
 
         revalidatePath('/')
         return {success: 'Todo created successfully'}
-    } catch (error) {
+    } catch {
         return { error: 'Failed to create todo' }
     }
 }
@@ -72,7 +72,7 @@ export async function updateTodo(id: string, formData: FormData) {
 
         revalidatePath('/')
         return { success: 'Todo updated successfully' }
-    } catch (error) {
+    } catch {
         return { error: 'Failed to update todo'}
     }
 }
@@ -95,7 +95,7 @@ export async function deleteTodo(id: string) {
 
         revalidatePath('/')
         return { success: 'Todo deleted successfully' }
-    } catch (error) {
+    } catch {
         return { error: 'Failed to delete todo'}
     }
 }
@@ -124,7 +124,7 @@ export async function toggleTodo(id: string) {
 
         revalidatePath('/')
         return { success: 'Todo updated successfully' }
-    } catch (error) {
+    } catch {
         return { error: 'Failed to update todo'}
     }
 }

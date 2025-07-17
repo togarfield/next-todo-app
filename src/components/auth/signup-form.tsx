@@ -94,7 +94,7 @@ export function SignUpForm() {
             </label>
             <Input
               id="confirmPassword"
-              type="confirmPassword"
+              type="password"
               placeholder="Confirm your password"
               {...register("confirmPassword")}
             />

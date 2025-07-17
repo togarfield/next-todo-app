@@ -1,12 +1,10 @@
-"use client";
-
 import { CheckSquare, LogOut } from "lucide-react";
 import { createClient } from "../../../lib/supabase/server";
 import { signOut } from "../../../lib/actions/auth";
 import { Button } from "../ui/button";
 
 export async function Header() {
-  const supabase = createClient();
+  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -27,8 +25,8 @@ export async function Header() {
               </span>
               <form action={signOut}>
                 <Button variant="outline" size="sm">
-                  <LogOut className="w-4 h-4 mr-1" />
-                  Sign Out
+                  <LogOut className="w-4 h-4 mr-1 text-gray-600" />
+                  <span className="text-gray-600">Sign Out</span>
                 </Button>
               </form>
             </div>

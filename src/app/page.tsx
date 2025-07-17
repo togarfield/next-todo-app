@@ -30,12 +30,14 @@ export default async function HomePage() {
           <p className="text-gray-600">Manage your todos and stay organized</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div>
-            <AddTodoForm />
+        <div className="space-y-8">
+          <div className="flex justify-center">
+            <div className="w-full max-w-md">
+              <AddTodoForm />
+            </div>
           </div>
 
-          <div className="md:col-span-2">
+          <div>
             <TodoList todos={todos} />
           </div>
         </div>
