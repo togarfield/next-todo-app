@@ -13,11 +13,8 @@ export const createClient = () => {
                     return (await cookieStore).getAll()
                 },
                 setAll(cookiesToSet) {
-                    try {
-                        cookiesToSet.forEach(async ({ name, value, options }) => (await cookieStore).set(name, value, options))
-                    } catch {
-                        
-                    }
+                    // Cookie setting is disabled for Server Components
+                    // Supabase SSR handles authentication cookies via middleware
                 }
             }
         }
